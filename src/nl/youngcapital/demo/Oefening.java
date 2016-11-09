@@ -2,6 +2,8 @@ package nl.youngcapital.demo;
 
 import java.io.IOException;
 
+
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,10 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-import org.apache.tomcat.jni.Time;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Enumeration;
 
 
@@ -31,13 +31,6 @@ public class Oefening extends HttpServlet {
 	DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("HH:mm");
 	
 	
-	
-	
-	
-	
-	
-	
-	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -54,16 +47,16 @@ public class Oefening extends HttpServlet {
 				+ "<ul>");
 				
 		Enumeration<String> headerNames = request.getHeaderNames();
-		String header = headerNames.nextElement();
 		
 		while (headerNames.hasMoreElements()){
 		
+			String header = headerNames.nextElement();
+			
 			response.getWriter().append("<li>" + header + "</li>");
 			
-			response.getWriter().append("</body></html>");
-		
 		}
 		
+		response.getWriter().append("</body></html>");
 		
 	
 		
