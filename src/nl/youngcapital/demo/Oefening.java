@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * Servlet implementation class Oefening
  */
-@WebServlet("/")
+@WebServlet("/url/*")
 public class Oefening extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
