@@ -1,15 +1,19 @@
 package nl.youngcapital.demo;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import org.apache.tomcat.jni.Time;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Enumeration;
 
 
 /**
@@ -29,18 +33,40 @@ public class Oefening extends HttpServlet {
 	
 	
 	
+	
+	
+	
+	
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		
+		
 		response.getWriter().append(
-		"<!DOCTYPE html><html><head>"
-		+ "<title>Test servlet</title>"
-		+ "<head><body><h1>Dit is de testservlet!</h1><br>"
-		+ "De tijd is: " + myTimeString + "<br>"
-		+ "De pagina is " + ++counter + " keer bezocht."
-		+ "</body></html>");
+				"<!DOCTYPE html><html><head>"
+				+ "<title>Test servlet</title>"
+				+ "<head><body><h1>Dit is de testservlet!</h1><br>"
+				+ "De tijd is: " + myTimeString + "<br>"
+				+ "De pagina is " + ++counter + " keer bezocht.<br>"
+				+ "<ul>");
+				
+		Enumeration<String> headerNames = request.getHeaderNames();
+		String header = headerNames.nextElement();
+		
+		while (headerNames.hasMoreElements()){
+		
+			response.getWriter().append("<li>" + header + "</li>");
+			
+			response.getWriter().append("</body></html>");
+		
+		}
+		
+		
+	
+		
 		
 	}
 
