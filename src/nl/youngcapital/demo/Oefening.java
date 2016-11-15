@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.Enumeration;
+import java.util.*;
 
 
 /**
  * Servlet implementation class Oefening
  */
-@WebServlet("/url/*")
+@WebServlet("/Oefening")
 public class Oefening extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
